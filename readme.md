@@ -65,7 +65,7 @@ LJMU/
 | 2 | `cd Image-Forgery-Detection-EffectofImagePostProcessing` |  |
 | 3 | `conda env create -f environment.yml`<br>`conda activate ela_cnn` | Python 3.10, TensorFlow 2.15, OpenCV, etc. |
 | 4 | **Download dataset** from Kaggle → <https://www.kaggle.com/datasets/dk9892/casia-v2><br>Unzip and place images under `LJMU/CodeBase/Dataset/Casia-v2-originalDS/` so that paths look like `.../Authentic/*` and `.../Tampered/*`. | Dataset (~5 GB) is intentionally **not** pushed to GitHub. |
-| 5 | Open any notebook in the relevant *StableVersions‑*/**ModelName** folder and run all cells **or** launch CLI training:<br>`python src/train_eval.py --config configs/config.yaml` | Re‑trains MobileNetV2 baseline (≈6 min on RTX 3060). |
+| 5 | Open any notebook in the relevant *StableVersions‑*/**ModelName** folder and run all cells | Re‑trains MobileNetV2 baseline (≈6 min on RTX 3060). |
 
 ---
 
