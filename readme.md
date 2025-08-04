@@ -69,16 +69,12 @@ LJMU/
 
 ---
 
-## 4  Reproducing the Thesis Results
+## 4 Logging and reproduction of thesis: 
 
-| Experiment | Notebook | Expected F1 | Thesis Table |
-|------------|----------|-------------|--------------|
-| MobileNetV2 baseline | `StableVersions‑MobileNet/NonProcessedImageForensics/MobileNetV2_Base.ipynb` | 0.81 ± 0.01 | 5.3 |
-| MobileNetV2 +Contrast | `.../ProcessedImageForensics/MobileNetV2_C1_B1_S1_CLAHE0_INVO_BC1_E30i.ipynb` | 0.89 ± 0.00 | 5.10 |
-| EfficientNetB0 +Sharp | `StableVersions‑EfficientNet/ProcessedImageForensics/EffNet_C2_B1_S1_CLAHE0_INVO_BCO_E30i.ipynb` | 0.92 ± 0.01 | 5.6 |
-| ResNet50v2 +Blue Ch. | `StableVersions‑ResNet/ProcessedImageForensics/ResNet50v2_C1_B2_S1_CLAHE0_INVO_BCO_E30i.ipynb` | 0.90 ± 0.01 | 5.8 |
+Each run produces its own entry in the CSV file in the same folder (`NP_model_results_log.csv` or `P_model_results_log.csv`).
+Multiple runs have been performed with various image sets within the dataset, Thesis related runs that were performed have been taken into account in the "Experiment Results.xlsx" file, providing comprehensive proof for the thesis claim.
 
-Each run produces its own CSV in the same folder (`NP_model_results_log.csv` or `P_model_results_log.csv`).
+The results you would see on the ipynb files are not final results, but rather iterative of various trials that have been conducted on the datasets. Not to be interpretted otherwise. 
 
 ---
 
@@ -98,18 +94,41 @@ Details are discussed in Thesis §5.5–§5.7.
 
 ---
 
-## 7  Requirements
-| Package | Version tested |
-|---------|----------------|
-| Python | 3.10 |
-| TensorFlow | 2.15 |
-| Keras CV | 0.11 |
-| OpenCV‑Python | 4.10 |
-| Pillow | 10.4 |
-| scikit‑learn | 1.5 |
-| NumPy / Pandas / Matplotlib / *etc.* | latest |
+## 7 Hardware and Software Requirements
 
-Full specification in `environment.yml`.
+### Hardware
+
+| Component | Specification | Purpose |
+|-----------|---------------|---------|
+| Processor | Intel Core i7‑12700H | Multi‑core CPU for data processing tasks |
+| GPU | NVIDIA GeForce RTX 3060 (12 GB VRAM) | Accelerated training of CNN models |
+| RAM | 16 GB DDR4 | Efficient memory handling during training |
+| Storage | 1 TB SSD | Fast read and write operations |
+| Operating system | Ubuntu 22.04 LTS | Stable Linux environment for machine learning |
+
+### Software
+
+| Library or Tool | Version | Role in Implementation |
+|-----------------|---------|------------------------|
+| TensorFlow / Keras | 2.12 | Define, train, and evaluate CNN architectures |
+| OpenCV | 4.7 | ELA generation, CLAHE processing, blue‑channel separation |
+| Pillow (PIL) | 9.5.0 | Image loading, resizing, and enhancements (contrast, brightness, sharpness) |
+| NumPy | 1.24.2 | Numerical computation and image matrix manipulation |
+| Pandas | 1.5.3 | Logging experiment metadata and results |
+| Matplotlib | 3.7.1 | Visualisation of training and evaluation metrics |
+| Seaborn | 0.12.3 | Comparative heatmaps and plots for model metrics |
+| scikit‑learn | 1.2.2 | Accuracy, precision, recall, F1‑score, confusion matrix |
+| tqdm | 4.65.0 | Progress bars for loops and training |
+| os, shutil, pathlib | Built‑in | File and directory manipulation, dataset structuring |
+| random, datetime | Built‑in | Reproducible shuffling, seeding, timestamping of logs |
+| time | Built‑in | Timing of training cycles and monitoring |
+| BytesIO | Built‑in | In‑memory ELA map handling |
+| collections.defaultdict | Built‑in | Structured dictionaries for experiment tracking |
+| tensorflow.keras.callbacks | Bundled | Early stopping and learning‑rate scheduling |
+| ImageDataGenerator | Bundled | Data augmentation: zoom, flip, rotate, shear |
+| Visual Studio Code | 1.101.1 | IDE used for code development |
+| Git | 2.50.1 | Version control |
+| Miniconda | 23.5.1 | Virtual‑environment management |
 
 ---
 
