@@ -53,7 +53,7 @@ LJMU/
         └── Casia-v2-originalDS/      ← Place downloaded dataset here
 ```
 
-> **Tip:** The `C* B* S*` patterns encode the optimiser’s channel, block, and stride hyper‑parameters. Full naming conventions are described in Thesis §4.2.
+> **Tip:** The `C* B* S* Clahe Inv BC` patterns encode the Enhancements and the factor of enhancement used against Contrast, Brightness, Sharpness, CLAHE (true/ false), Inversion (true / false) and Blue Channel RGB (true / false) respectively.
 
 ---
 
@@ -79,11 +79,11 @@ The results you would see on the ipynb files are not final results, but rather i
 ---
 
 ## 5  Key Findings
-* Post‑ELA local enhancements **raise F1‑score by up to 8 pp** without increasing model depth.  
+* Post‑ELA local enhancements **raise F1‑score by up to 12 %** without increasing model depth.  
 * **Contrast amplification** is the most reliable single enhancer across all three networks.  
 * **MobileNetV2** (3.5 M parameters) matches or exceeds deeper ResNet50v2 once enhancements are applied, making it suitable for resource‑constrained devices.
 
-Details are discussed in Thesis §5.5–§5.7.
+
 
 ---
 
